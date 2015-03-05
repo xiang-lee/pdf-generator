@@ -14,9 +14,19 @@ APIs:
 
 It's flexible to create your HTML+CSS in freemarkter tempalte to generate the PDF. 
 
+
+## Example
+It supports for Bookmarks in navigation bar. In the example, users data is from User.java object
+![alt tag](https://github.com/xiang-lee/pdf-generator/blob/master/images/example1.png)
+
+
 ## Usage
 
-Invoke PdfGenerator:
+###### Using Eclipse
+If you are using eclipse, you can import "Existing Maven Project", set the PDF output path in Runner.java and run it. Enjoy!
+
+
+###### Invoke PdfGenerator:
 
 ```
 //The output path of your PDF file
@@ -33,7 +43,8 @@ String htmlStr = HtmlGenerator.generate(tampleFile, variables);
 PdfGenerator.generate(htmlStr, new FileOutputStream(outputFilePath));  
 ```
 
-In your freemarker template, you can easily display the data like HTML + CSS, the users variable is from variables.put("users",users) in the example
+###### Freemarker template
+You can easily display the data like HTML + CSS, the users variable is from variables.put("users",users) in the example
 ```
 <table border="1"  cellspacing="0" cellpadding="0" align="center"> 
 	<#list 1..users?size as i>
