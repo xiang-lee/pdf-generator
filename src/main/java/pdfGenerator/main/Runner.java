@@ -1,7 +1,6 @@
 package pdfGenerator.main;
 
 import java.io.FileOutputStream;
-import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -15,9 +14,11 @@ import pdfGenerator.util.PdfGenerator;
 public class Runner {
 	
     public static void main( String[] args ) throws Exception {
+    	//The output path of your PDF file
     	String outputFilePath = "C:\\PDFSample\\samplePDF.pdf";
-    	String tampleFile = "freemarker_template.html";
     	
+    	//The path of your freemarker template
+    	String tampleFile = "freemarker_template.html";
     	
     	Map<String,Object> variables = new HashMap<String,Object>();
     	
@@ -26,8 +27,7 @@ public class Runner {
     	//you can put any variables you want, so that you can use them in freemarker template
     	variables.put("users",users);
         String htmlStr = HtmlGenerator.generate(tampleFile, variables);        
-        OutputStream out = new FileOutputStream(outputFilePath);   
-        PdfGenerator.generate(htmlStr, out);  
+        PdfGenerator.generate(htmlStr, new FileOutputStream(outputFilePath));  
     }
     
     private static List<User> createUserList() {
