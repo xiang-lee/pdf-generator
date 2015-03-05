@@ -1,0 +1,110 @@
+<!DOCTYPE html [
+    <!ENTITY nbsp "&#160;"> 
+]>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>PDF Generator</title>
+
+<style type="text/css">
+.head1 {
+	color: #496192;
+	font-size: x-large;
+}
+.head2 {
+	color: #496192;
+	font-size: large;
+}
+.head3 {
+	color: #000;
+	font-size:medium
+}
+
+.paragraph {
+	text-align: justify;
+}
+
+.toc { 
+		list-style-type:none;
+}
+.toc a::after { content: leader('.') target-counter(attr(href), page); }
+
+</style>
+
+
+<bookmarks>
+
+  <bookmark name="1 Introduction" href="#_introduction">
+    <bookmark name="1.1 Intoduction Sub" href="#_introduction_sub"></bookmark>
+  </bookmark>
+  
+   <bookmark name="2 User" href="#_user"> 
+    <bookmark name="2.1 User Detail" href="#_user_detail"></bookmark>
+    </bookmark>
+    
+ </bookmarks>
+
+
+</head>
+
+<body>
+<p class="head1">PDF Generator</p>
+
+
+<div style="page-break-after: always;"> </div>
+
+
+
+
+<p class="head2">Contents</p>
+
+
+<ol class="toc">
+	<li><a href="#_introduction">1 Introduction</a></li>
+        <ol class="toc">
+        	<li><a href="#_introduction_sub">1.1 Intoduction Sub</a></li>
+        </ol>       
+   <li><a href="#_user">2 User</a> </li> 
+   		<ol class="toc">
+            <li><a href="#_user_detail">2.1 User Detail</a></li>      
+        </ol>      
+</ol>
+
+
+  
+<div style="page-break-after: always;"></div>
+
+  
+<h1 ><a  class="head1" name="_introduction" >1 Introduction</a></h1>
+<h2><a name="_introduction_sub" class="head2">1.1 Introduction Sub</a></h2>
+
+This is the example of PDF Generator
+
+<div style="page-break-after: always;"> </div>
+
+
+<h1 ><a  class="head1" name="_user" >2 User</a></h1>
+<h2><a name="_user_detail" class="head2">2.1 User Detail</a></h2>
+
+<table border="1"  cellspacing="0" cellpadding="0" align="center"> 
+<#list 1..users?size as i>
+	<#if i%2==0> 
+  		<tr style="background:#FABF8F">
+    <#else>
+        <tr style="background:#C4D79B">
+    </#if>
+   	
+		<td width="189" align="center"><p align="center">${users[i-1].id}</p></td> 
+        <td width="189" align="center"><p align="center">${users[i-1].username}</p></td> 
+        <td width="189" align="center"><p align="center">${users[i-1].age}</p></td> 
+      
+	</tr>
+</#list>
+</table>
+
+
+
+ 
+</body>
+</html>
