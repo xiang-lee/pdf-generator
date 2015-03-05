@@ -86,24 +86,26 @@ This is the example of PDF Generator
 
 <h1 ><a  class="head1" name="_user" >2 User</a></h1>
 <h2><a name="_user_detail" class="head2">2.1 User Detail</a></h2>
-
 <table border="1"  cellspacing="0" cellpadding="0" align="center"> 
-<#list 1..users?size as i>
-	<#if i%2==0> 
-  		<tr style="background:#FABF8F">
-    <#else>
-        <tr style="background:#C4D79B">
-    </#if>
-   	
-		<td width="189" align="center"><p align="center">${users[i-1].id}</p></td> 
-        <td width="189" align="center"><p align="center">${users[i-1].username}</p></td> 
-        <td width="189" align="center"><p align="center">${users[i-1].age}</p></td> 
-      
-	</tr>
-</#list>
+	<thead>
+      <tr style="background:#CCC0DA">
+         <th align="center">Id</th>
+         <th align="center">Username</th>
+         <th align="center">Age</th>
+      </tr>
+     </thead>
+    <#list 1..users?size as i>
+        <#if i%2==0> 
+            <tr style="background:#FABF8F">
+        <#else>
+            <tr style="background:#C4D79B">
+        </#if>
+            <td width="189" align="center"><p align="center">${users[i-1].id}</p></td> 
+            <td width="189" align="center"><p align="center">${users[i-1].username}</p></td> 
+            <td width="189" align="center"><p align="center">${users[i-1].age}</p></td>    
+        </tr>
+    </#list>
 </table>
-
-
 
  
 </body>
